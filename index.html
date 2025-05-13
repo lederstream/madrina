@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 Carta para mi Madrina Dora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #3a0ca3, #7209b7, #f72585);
+      background-size: 600% 600%;
+      animation: gradientBG 20s ease infinite;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .card {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 1.5s ease-out forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ffe066;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .emojis {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+
+    .firma {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #ffd6ff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.05em;
+      }
+
+      .card {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💐 Feliz día atrasado, Madrina Dora 💖</h1>
+    <p>
+      Ayer me olvidé de saludarte, pero jamás me olvido de cuánto te quiero y lo importante que eres para mí. 🥰<br><br>
+      Gracias por ser una segunda madre, por tu amor, tus consejos, tu luz y todo lo que significas en mi vida. 🌟<br><br>
+      ¡Hoy te celebro con todo mi corazón! Porque las personas increíbles como tú merecen ser celebradas todos los días. 🎉💝<br><br>
+      Que la vida siempre te regale sonrisas, flores, momentos felices y todo lo que te haga bien. 🌸🌈💫
+    </p>
+    <div class="emojis">💖💐🌟👩‍👧‍👦🌈✨🎉</div>
+    <div class="firma">Con mucho cariño, tu ahijado Marco 💌</div>
+  </div>
+</body>
+</html>
