@@ -2,104 +2,145 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💖 Carta para mi Madrina Dora</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Feliz Cumpleaños, Madrina!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #3a0ca3, #7209b7, #f72585);
-      background-size: 600% 600%;
-      animation: gradientBG 20s ease infinite;
+      background: linear-gradient(135deg, #1e1e2f, #3a2062);
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
       text-align: center;
-      padding: 20px;
-    }
-
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    .card {
-      max-width: 800px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 30px 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      backdrop-filter: blur(12px);
-      animation: fadeIn 1.5s ease-out forwards;
-      transform: translateY(30px);
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      padding: 2rem;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #ffe066;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffb3ec;
     }
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      margin-bottom: 20px;
+    .btn {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      border: none;
+      background: #ff69b4;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
     }
 
-    .emojis {
-      font-size: 2em;
-      margin: 20px 0;
+    .btn:hover {
+      background: #ff85c1;
+      transform: scale(1.05);
     }
 
-    .firma {
-      font-weight: bold;
-      font-size: 1.2em;
-      color: #ffd6ff;
+    .surprise, .letter {
+      display: none;
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-align: left;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
 
-      p {
-        font-size: 1.05em;
-      }
+    #typewriterText {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
 
-      .card {
-        padding: 20px 15px;
-      }
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>💐 Feliz día atrasado, Madrina Dora 💖</h1>
-    <p>
-      Ayer me olvidé de saludarte, pero jamás me olvido de cuánto te quiero y lo importante que eres para mí. 🥰<br><br>
-      Gracias por ser una segunda madre, por tu amor, tus consejos, tu luz y todo lo que significas en mi vida. 🌟<br><br>
-      ¡Hoy te celebro con todo mi corazón! Porque las personas increíbles como tú merecen ser celebradas todos los días. 🎉💝<br><br>
-      Que la vida siempre te regale sonrisas, flores, momentos felices y todo lo que te haga bien. 🌸🌈💫
-    </p>
-    <div class="emojis">💖💐🌟👩‍👧‍👦🌈✨🎉</div>
-    <div class="firma">Con mucho cariño, tu ahijado Marco 💌</div>
+  <h1>🎂 ¡Feliz cumpleaños, querida madrina! 🎉</h1>
+
+  <button class="btn" onclick="showSurprise()">🎁 Ver Sorpresa</button>
+  <button class="btn" onclick="showLetter()">💌 Leer Carta</button>
+
+  <div class="surprise" id="surprise">
+    <p style="margin-bottom:1rem;">✨ ¡Eres una persona muy especial! ✨</p>
+    <p style="font-style: italic;">Un millón de abrazos desde el corazón. 💗</p>
   </div>
+
+  <div class="letter" id="letter">
+    <div id="typewriterText"></div>
+  </div>
+
+  <audio autoplay loop id="bgMusic">
+    <source src="https://cdn.pixabay.com/audio/2023/03/30/audio_8120b84631.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    function showSurprise() {
+      const el = document.getElementById('surprise');
+      el.style.display = 'block';
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showLetter() {
+      const el = document.getElementById('letter');
+      const textEl = document.getElementById('typewriterText');
+      el.style.display = 'block';
+      textEl.innerHTML = ''; // Limpiar
+
+      const texto = `
+
+Querida madrina,
+
+En este día tan especial, quiero tomar un momento para escribirte con el corazón lleno de cariño y gratitud. ¡Feliz cumpleaños! 🎉
+
+Hoy celebramos no solo un año más de tu vida, sino también todo lo hermoso que traes al mundo con tu presencia. Eres una mujer admirable, bondadosa, generosa y con una luz que ilumina a todos los que tenemos la suerte de conocerte.
+
+Tu dulzura, tus consejos sabios, tu paciencia y tu enorme corazón han sido un ejemplo para mí desde siempre. Gracias por darme tanto amor, por estar presente en los momentos importantes y por ser esa figura tan especial en mi vida.
+
+Espero que este nuevo año te regale alegrías infinitas, salud, amor verdadero y momentos que te hagan sonreír cada día. Que puedas divertirte mucho hoy, rodeada de personas que te quieren y valoran tanto como yo.
+
+¡Te mereces lo más hermoso del mundo, madrina! 🌸
+Gracias por ser tú. Gracias por ser mi madrina. Te quiero con todo mi corazón.
+
+Con muchísimo cariño,
+Marco`;
+
+      const palabras = texto.split(' ');
+      let i = 0;
+
+      function mostrarPalabra() {
+        if (i < palabras.length) {
+          textEl.innerHTML += palabras[i] + ' ';
+          i++;
+          setTimeout(mostrarPalabra, 100); // velocidad de aparición (ajustable)
+        }
+      }
+
+      mostrarPalabra();
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
